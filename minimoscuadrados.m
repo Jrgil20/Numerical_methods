@@ -34,3 +34,16 @@ coefs = A \ y;
 % IMPRIMIR RESULTADOS
 disp('--- Paso 4: Coeficientes Solución ---');
 disp(coefs);
+
+% 4. Cálculo del Error y Validación
+y_pred = A * coefs;              % Calculamos qué valor predice nuestro polinomio
+residuo = y - y_pred;            % Calculamos la diferencia con el valor real
+error_total = sum(residuo.^2);   % Elevamos al cuadrado y sumamos
+
+% IMPRIMIR ERROR
+disp('--- Paso 5: Error Cuadrático Total ---');
+disp(error_total);
+
+% (Opcional) Ver los valores uno al lado del otro
+disp('--- Comparación: Real vs Predicho ---');
+disp([y, y_pred]);

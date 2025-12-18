@@ -33,7 +33,7 @@ disp(ATA);
 % Debería darte: 18.2001, 45.7034, etc.
 ATy = A' * y;
 
-disp('--- Vector ATy (Debe coincidir con la guía) [cite: 36-39] ---');
+disp('--- Vector ATy (Debe coincidir con la guía) ---');
 disp(ATy);
 
 % ==========================================
@@ -49,5 +49,5 @@ disp(coeffs);
 % Verificamos el Error (Opcional)
 y_pred = A * coeffs;
 Error = sum((y - y_pred).^2);
-disp('--- Error calculado [cite: 46] ---');
+disp('--- Error calculado ---');
 disp(Error);
