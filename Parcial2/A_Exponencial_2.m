@@ -8,7 +8,7 @@ y = y(:);
 n = length(x);
 
 % Linealización: ln(y) = ax + ln(b) -> Y = aX + c
-X = x;
+X = x;   % <-- Única diferencia
 Y = log(y);
 
 % Construcción del Sistema Normal (Pag. 3)
