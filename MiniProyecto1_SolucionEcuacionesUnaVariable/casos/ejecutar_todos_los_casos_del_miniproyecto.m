@@ -15,6 +15,7 @@
 
 ruta_carpeta_actual = fileparts(mfilename('fullpath'));
 addpath(ruta_carpeta_actual);
+addpath(fullfile(ruta_carpeta_actual, '..', 'algoritmos'));
 
 archivos_a_ejecutar_en_orden = { ...
     'caso1_NewtonRaphson_CicloLimite_FuncionCubicaModificada.m', ...
@@ -33,4 +34,4 @@ end
 
 printf('\nTodos los casos del Mini-Proyecto #1 finalizaron.\n');
 printf('Revise los archivos PNG generados en la carpeta:\n  %s\n', ...
-       ruta_carpeta_actual);
+       fullfile(ruta_carpeta_actual, '..', 'salidas'));

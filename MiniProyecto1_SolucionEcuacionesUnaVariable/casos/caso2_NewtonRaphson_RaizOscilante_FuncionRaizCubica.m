@@ -30,6 +30,9 @@
 clc;
 close all;
 
+ruta_carpeta_actual = fileparts(mfilename('fullpath'));
+addpath(fullfile(ruta_carpeta_actual, '..', 'algoritmos'));
+
 % -------------------------------------------------------------------------
 % Para que f(x) = x^(1/3) este definida para x negativos en Octave/Matlab,
 % NO se puede usar x.^(1/3) directamente (devuelve numeros complejos para
@@ -119,6 +122,7 @@ title('Crecimiento geometrico: |x_k| = |x_0| * 2^k');
 legend({'experimental', 'teorico  |x_0| 2^k'}, 'Location', 'NorthWest');
 
 ruta_imagen_salida = fullfile(fileparts(mfilename('fullpath')), ...
+    '..', 'salidas', ...
     'salida_grafica_caso2_raiz_oscilante_cubica.png');
 print(figura_caso_2, ruta_imagen_salida, '-dpng', '-r150');
 printf('\nGrafica guardada en: %s\n', ruta_imagen_salida);

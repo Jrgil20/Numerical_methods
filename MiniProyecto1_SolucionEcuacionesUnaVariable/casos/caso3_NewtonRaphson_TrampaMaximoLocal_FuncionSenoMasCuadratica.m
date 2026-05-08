@@ -35,6 +35,9 @@
 clc;
 close all;
 
+ruta_carpeta_actual = fileparts(mfilename('fullpath'));
+addpath(fullfile(ruta_carpeta_actual, '..', 'algoritmos'));
+
 funcion_objetivo                  = @(x) sin(x) + x.^2 / 20;
 derivada_funcion_objetivo         = @(x) cos(x) + x / 10;
 
@@ -128,6 +131,7 @@ dibujar_panel_iteracion_newton_con_maximo_local( ...
             strrep(estado_convergencia_3B, '_', ' ')));
 
 ruta_imagen_salida = fullfile(fileparts(mfilename('fullpath')), ...
+    '..', 'salidas', ...
     'salida_grafica_caso3_trampa_maximo_local.png');
 print(figura_caso_3, ruta_imagen_salida, '-dpng', '-r150');
 printf('\nGrafica guardada en: %s\n', ruta_imagen_salida);

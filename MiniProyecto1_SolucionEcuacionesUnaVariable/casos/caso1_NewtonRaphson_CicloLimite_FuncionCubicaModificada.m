@@ -26,6 +26,9 @@
 clc;
 close all;
 
+ruta_carpeta_actual = fileparts(mfilename('fullpath'));
+addpath(fullfile(ruta_carpeta_actual, '..', 'algoritmos'));
+
 % -------------------------------------------------------------------------
 % Parametros del experimento numerico.
 % -------------------------------------------------------------------------
@@ -106,6 +109,7 @@ legend({'f(x)', 'eje X', 'raices analiticas', ...
 axis([-3 3 -10 10]);
 
 ruta_imagen_salida = fullfile(fileparts(mfilename('fullpath')), ...
+    '..', 'salidas', ...
     'salida_grafica_caso1_ciclo_limite_funcion_cubica.png');
 print(figura_caso_1, ruta_imagen_salida, '-dpng', '-r150');
 printf('\nGrafica guardada en: %s\n', ruta_imagen_salida);

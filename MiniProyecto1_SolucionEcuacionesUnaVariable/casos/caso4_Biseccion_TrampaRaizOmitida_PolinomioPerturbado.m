@@ -33,6 +33,9 @@
 clc;
 close all;
 
+ruta_carpeta_actual = fileparts(mfilename('fullpath'));
+addpath(fullfile(ruta_carpeta_actual, '..', 'algoritmos'));
+
 funcion_objetivo                 = @(x) (x - 1.1).^2 .* (x - 2) - 0.01;
 
 extremo_inferior_intervalo_a     = 1;
@@ -140,6 +143,7 @@ xlabel('iteracion k'); ylabel('error_k = (b_k - a_k)/2');
 title('Decrecimiento geometrico del error por biseccion');
 
 ruta_imagen_salida = fullfile(fileparts(mfilename('fullpath')), ...
+    '..', 'salidas', ...
     'salida_grafica_caso4_biseccion_raiz_omitida.png');
 print(figura_caso_4, ruta_imagen_salida, '-dpng', '-r150');
 printf('\nGrafica guardada en: %s\n', ruta_imagen_salida);
