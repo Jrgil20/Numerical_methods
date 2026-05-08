@@ -1,0 +1,20 @@
+Análisis de fallas de los Métodos de Newton y Bisección
+El principal desafío al buscar raíces numéricas radica en que ningún método es infalible; mientras la bisección es "lenta pero segura", el de Newton-Raphson es "rápido pero arriesgado". La bisección falla principalmente por su incapacidad de detectar raíces donde la función no cruza el eje X (raíces de multiplicidad par), además de ser extremadamente tediosa al requerir un intervalo con cambio de signo obligatorio. Por otro lado, Newton-Raphson colapsa si el valor inicial está lejos de la solución o si se topa con una pendiente horizontal (derivada cero), lo que provoca que el algoritmo se dispare hacia el infinito o quede atrapado en un ciclo sin fin. En este sentido, es vital entender que la bisección puede tardar demasiado en converger, mientras que Newton-Raphson, aunque potente, es caprichoso: si la función tiene curvas muy pronunciadas o si la raíz es múltiple, su velocidad se desploma y puede entregar resultados erróneos. Mientras que el método de Bisección sufre por su rigidez e ineficiencia, Newton-Raphson es vulnerable a la forma geométrica de la función y a la mala elección del punto de partida. A continuación se presentan cuatro situaciones de fallas de los métodos indicados para que usted realice el análisis correspondiente.
+El bucle infinito de la Función Cúbica Modificada.
+Considere la función definida por fx=x3-5x. Se requiere encontrar las raíces de esta función utilizando el método de Newton-Rhapson. Demuestre analíticamente que si se elige como iterado inicial x0=1, el método entra en ciclo límite de período 2, oscilando indefinidamente entre 1 y -1. 
+Ejecute el script de Newton-Raphson en Matlab para comprobar experimentalmente los resultados. Muestre sus hallazgos en forma gráfica.
+
+El Problema de la Raíz Oscilante.
+Se desea encontrar la raíz real de la siguiente función no lineal fx=3x. Demuestre analíticamente por qué el método de Newton-Rhapson falla al intentar hallar la raíz x=0, si se elige un valor inicial distinto de cero. 
+Ejecute el script de Newton-Raphson en Matlab para comprobar experimentalmente los resultados. Muestre sus hallazgos en forma gráfica.
+
+La trampa del Máximo Local.
+Sea la función fx=senx+x220.  Utilice el método de Newton-Rhapson con un iterado inicial x=1.08216 para demostrar que el método colapsa en la segunda iteración debido a la presencia de un máximo local.
+Ejecute el script de Newton-Raphson en Matlab para comprobar experimentalmente los resultados. Muestre sus hallazgos en forma gráfica.
+
+La trampa de la Raíz Omitida.
+La función fx=x-1.12x-2-0.01 describe el comportamiento de un Sistema Físico con raíces en el intervalo 1, 3.
+Verifique que se cumple la condición de cambio de signo.
+Ejecute el script del método de Bisección en Matlab y analice por qué el resultado puede considerarse un fallo desde el punto de vista del diseño. Muestre sus hallazgos en forma gráfica.
+
+El MiniProyecto puede ser realizado por dos estudiantes o en forma individual.
