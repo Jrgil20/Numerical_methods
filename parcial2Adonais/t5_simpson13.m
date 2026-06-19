@@ -29,7 +29,7 @@ fprintf('Integrar f(x)=exp(x) en [%.3f, %.3f] con n = %d (par)\n\n', a, b, n);
 % --- PASO 1: h y nodos ---------------------------------------------------
 fprintf('═══ PASO 1: Paso h y nodos ═══\n\n');
 h = (b - a) / n;
-x = a:h:b;
+x = linspace(a, b, n+1);    % garantiza exactamente n+1 puntos (robusto)
 y = f(x);
 fprintf('   h = (b-a)/n = %.6f\n\n', h);
 fprintf('   %3s  %12s  %12s  %s\n', 'i', 'x_i', 'f(x_i)', 'peso');

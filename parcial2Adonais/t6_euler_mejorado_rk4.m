@@ -25,8 +25,8 @@ fprintf('╚══════════════════════�
 
 fprintf("PVI:  y' = y - t^2 + 1,   y(%.1f) = %.3f,  h = %.3f\n\n", t0, y0, h);
 
-t = t0:h:tf;
-N = numel(t);
+N = round((tf - t0) / h) + 1;           % nº de puntos
+t = linspace(t0, tf, N);                % garantiza exactamente N puntos (robusto)
 
 % --- PASO 1: Euler mejorado (Heun) ---------------------------------------
 fprintf('═══ PASO 1: Euler mejorado (Heun) - predictor/corrector ═══\n\n');

@@ -25,7 +25,7 @@ fprintf('Integrar f(x)=exp(x) en [%.3f, %.3f] con n = %d subintervalos\n\n', a, 
 % --- PASO 1: paso h y nodos ----------------------------------------------
 fprintf('═══ PASO 1: Paso h y nodos x_i ═══\n\n');
 h = (b - a) / n;
-x = a:h:b;
+x = linspace(a, b, n+1);    % garantiza exactamente n+1 puntos (robusto)
 y = f(x);
 fprintf('   h = (b-a)/n = (%.3f-%.3f)/%d = %.6f\n\n', b, a, n, h);
 fprintf('   %3s  %12s  %12s\n', 'i', 'x_i', 'f(x_i)');

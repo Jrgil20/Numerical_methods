@@ -27,8 +27,8 @@ fprintf('Intervalo [%.1f, %.1f] con paso h = %.3f\n\n', t0, tf, h);
 
 % --- PASO 1: malla de tiempos --------------------------------------------
 fprintf('═══ PASO 1: Malla de tiempos ═══\n\n');
-t = t0:h:tf;
-N = numel(t);
+N = round((tf - t0) / h) + 1;           % nº de puntos
+t = linspace(t0, tf, N);                % garantiza exactamente N puntos (robusto)
 fprintf('   N = %d puntos:  t = [', N);
 fprintf(' %.2f', t); fprintf(' ]\n\n');
 pausa(PASO_A_PASO);
